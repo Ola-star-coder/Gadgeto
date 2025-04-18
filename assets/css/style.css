@@ -194,7 +194,7 @@ body.active {
 
 .img-holder {
   aspect-ratio: var(--width) / var(--height);
-  background-color: var(--primary-light-gray);
+  background-color: var(--primary-color);
   overflow: hidden;
 }
 
