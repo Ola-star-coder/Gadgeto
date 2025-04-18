@@ -1219,6 +1219,31 @@ a.card-meta-text:is(:hover, :focus) {
   text-align: left;
 }
 
+.product-detail-title {
+  padding: 10px 0px;
+  font-size: 20px;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+.product-description {
+  padding: 10px 0px;
+  letter-spacing: 1px;
+}
+
+.product-features {
+  padding: 10px 0px
+}
+
+.product-feature-text {
+  padding: 10px 0px;
+}
+
+.perfect-feature-text {
+  letter-spacing: 1px;
+  padding: 10px 0px;
+}
+
 @media screen and (min-width:575px) {
   .thumbnails img {
     width: 90px;
