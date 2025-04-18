@@ -47,6 +47,34 @@ const toggleDarkMode = function(){
     }
 }
 
+// this is the image slider functionality
+const mainImage = document.getElementById("main-image");
+const thumbnails = document.querySelectorAll(".thumb");
+
+thumbnails.forEach(thumb => {
+  thumb.addEventListener("click", () => {
+    mainImage.style.opacity = 0;
+    setTimeout(() => {
+      mainImage.src = thumb.src;
+      mainImage.style.opacity = 1;
+    }, 400);
+  });
+});
+
+// it is the lightbox functionality
+ function openLightbox(src) {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+
+  lightboxImg.src = src;
+  lightbox.style.display = "flex";
+}
+
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
+}
+
+
 
 // toggler navbar close
 const closeNavbar = function(){

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+    <!-- <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml"> -->
 
     <!-- Custom Css Link -->
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -19,15 +21,363 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mr+De+Haviland&family=Roboto:wght@400;500;700&display=swap"
         rel="stylesheet">
-
-    <!-- Pre-load Images -->
-    <link rel="preload" as="image" href="./assets/images/hero-product-1.jpg">
-    <link rel="preload" as="image" href="./assets/images/hero-product-2.jpg">
-    <link rel="preload" as="image" href="./assets/images/hero-product-3.jpg">
-    <link rel="preload" as="image" href="./assets/images/hero-product-4.jpg">
-    <link rel="preload" as="image" href="./assets/images/hero-product-5.jpg">
 </head>
-<body>
-    
+
+<body id="top">
+
+    <!--Header-->
+    <header class="header" data-header>
+        <div class="container">
+
+            <div class="input-wrapper">
+                <input type="search" name="search" placeholder="Search Devices..." class="input-field">
+
+                <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+            </div>
+
+            <a href="index.html" class="logo">Gadgeto</a>
+
+            <div class="header-action">
+
+                <button class="header-action-btn" aria-label="user" data-dark-mode-toggler>
+                    <ion-icon name="moon-outline" aria-hidden="true"></ion-icon>
+                </button>
+
+                <button class="header-action-btn" aria-label="favorite list">
+                    <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+
+                    <span class="btn-badge">0</span>
+                </button>
+
+                <button class="header-action-btn" aria-label="cart">
+                    <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                    <span class="btn-badge">0</span>
+                </button>
+
+                <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
+                    <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+                </button>
+
+            </div>
+
+        </div>
+    </header>
+
+    <!-- SIDEBAR -->
+
+    <div class="sidebar" data-navbar>
+
+        <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+        <div class="wrapper">
+
+            <ul class="sidebar-list">
+
+                <li>
+                    <p class="sidebar-list-title">Language</p>
+                </li>
+
+                <li>
+                    <a href="#" class="sidebar-link">English</a>
+                </li>
+
+                <li>
+                    <a href="#" class="sidebar-link">French</a>
+                </li>
+
+                <li>
+                    <a href="#" class="sidebar-link">Spanish</a>
+                </li>
+
+            </ul>
+
+            <ul class="sidebar-list">
+
+                <li>
+                    <p class="sidebar-list-title">Currency</p>
+                </li>
+
+                <li>
+                    <a href="#" class="sidebar-link">USD - US Dollar</a>
+                </li>
+
+                <li>
+                    <a href="#" class="sidebar-link">Euro</a>
+                </li>
+
+                <li>
+                    <a href="#" class="sidebar-link">Pound</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <nav class="navbar">
+            <ul class="navbar-list">
+
+                <li class="navbar-item">
+                    <a href="#home" class="navbar-link" data-nav-link>Home</a>
+                </li>
+
+                <li class="navbar-item">
+                    <a href="#about" class="navbar-link" data-nav-link>About</a>
+                </li>
+
+                <li class="navbar-item">
+                    <a href="#product" class="navbar-link" data-nav-link>Product</a>
+                </li>
+
+                <li class="navbar-item">
+                    <a href="#blog" class="navbar-link" data-nav-link>Blogs</a>
+                </li>
+
+            </ul>
+        </nav>
+
+        <ul class="contact-list">
+
+            <li>
+                <p class="contact-list-title">Contact Us</p>
+            </li>
+
+            <li class="contact-item">
+                <address class="address">123 Tech Avenue, Silicon Valley, CA, USA</address>
+            </li>
+
+            <li class="contact-item">
+                <a href="mailto:support.center@gadgeto.io" class="contact-link">support@gadgeto.io</a>
+            </li>
+
+            <li class="contact-item">
+                <a href="tel:xxxxxxxxxxxx" class="contact-link">(xxx) xxxxxxxxxxxx</a>
+            </li>
+
+        </ul>
+
+        <div class="social-wrapper">
+
+            <p class="social-list-title">Follow US On Socials</p>
+
+            <ul class="social-list">
+
+                <li>
+                    <a href="#" class="social-link">
+                        <ion-icon name="logo-tiktok"></ion-icon>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="social-link">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="social-link">
+                        <ion-icon name="logo-twitter"></ion-icon>
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="overlay" data-overlay data-nav-toggler></div>
+
+    <main>
+        <article>
+            <!-- Product Details Section -->
+ <section class="product-details-section" id="product-details">
+    <div class="product-container">
+
+        <div class="product-details-wrapper">
+        <!-- Product Image -->
+        <div class="image-gallery">
+
+        <img src="./assets/images/dell-1.jpg" alt="Product Image" class="main-image" id="main-image" onclick="openLightbox(this.src)">
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <img id="lightbox-img" src="" alt="Zoomed image" draggable="false">
+        </div>
+                
+        <div class="thumbnails">
+        <img src="./assets/images/dell-2.avif" alt="Product Image" class="thumb">
+        <img src="./assets/images/dell-3.avif" alt="Product Image" class="thumb">
+        <img src="./assets/images/dell-4.avif" alt="Product Image" class="thumb">
+        <img src="./assets/images/dell-5.avif" alt="Product Image" class="thumb">
+        <img src="./assets/images/dell-6.avif" alt="Product Image" class="thumb">
+        <img src="./assets/images/dell-7.avif" alt="Product Image" class="thumb">
+        <img src="./assets/images/dell-8.avif" alt="Product Image" class="thumb">
+        <img src="./assets/images/dell-9.avif" alt="Product Image" class="thumb">
+        <img src="./assets/images/dell-10.avif" alt="Product Image" class="thumb">
+        </div>
+        </div>
+         
+        <!-- Product Content -->
+        <div class="product-details-content">
+        <h2 class="product-detail-title">Dell Precision 5540</h2>
+        <p class="product-description">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus nobis aliquam labordolores earum repudiandae? Excepturi sapiente quaerat eos, nam consequatur cupiditate minieligendi ad unde, vitae, voluptas corrupti quos?
+        <span class="price-tag">$2,199.00</span>
+        <!-- <button class="btn">Add to Cart</button> -->
+        </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="container">
+
+                    <div class="footer-top section">
+
+                        <div class="footer-brand">
+                            <a href="#" class="logo">Gadgeto</a>
+
+                            <ul>
+
+                                <li class="footer-list-item">
+                                    <ion-icon name="location-sharp" aria-hidden="true"></ion-icon>
+
+                                    <address class="address">Gadgeto, Lagos, Nigeria 2025</address>
+                                </li>
+
+                                <li class="footer-list-item">
+                                    <ion-icon name="call-sharp" aria-hidden="true"></ion-icon>
+
+                                    <a href="tel:+234567833901" class="footer-link">+234567833901</a>
+                                </li>
+
+                                <li>
+                                    <ul class="social-list">
+
+                                        <li class="social-list-item">
+                                            <a href="#" class="social-link">
+                                                <ion-icon name="logo-facebook" aria-hidden="true"></ion-icon>
+                                            </a>
+                                        </li>
+
+                                        <li class="social-list-item">
+                                            <a href="#" class="social-link">
+                                                <ion-icon name="logo-twitter" aria-hidden="true"></ion-icon>
+                                            </a>
+                                        </li>
+
+                                        <li class="social-list-item">
+                                            <a href="#" class="social-link">
+                                                <ion-icon name="logo-instagram" aria-hidden="true"></ion-icon>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                        <ul class="footer-list">
+
+                            <li class="footer-list-title">
+                                <p class="footer-list-title">Help & Information</p>
+                            </li>
+
+                            <li>
+                                <a href="#" class="footer-link">Help & Contact Us</a>
+                            </li>
+
+                            <li>
+                                <a href="#" class="footer-link">Returns & Refunds</a>
+                            </li>
+
+                            <li>
+                                <a href="#" class="footer-link">Online Stores</a>
+                            </li>
+
+                            <li>
+                                <a href="#" class="footer-link">Terms & Conditions</a>
+                            </li>
+
+                        </ul>
+
+                        <ul class="footer-list">
+
+                            <li class="footer-list-title">
+                                <p class="footer-list-title">About Us</p>
+                            </li>
+
+                            <li>
+                                <a href="#" class="footer-link">About Us</a>
+                            </li>
+
+                            <li>
+                                <a href="#" class="footer-link">What We Do</a>
+                            </li>
+
+                            <li>
+                                <a href="#" class="footer-link">FAQ Page</a>
+                            </li>
+
+                            <li>
+                                <a href="#" class="footer-link">Contact Us</a>
+                            </li>
+
+                        </ul>
+
+                        <div class="footer-list">
+
+                            <!-- <p class="footer-list-title">Newsletter</p>
+
+                            <form action="" class="footer-form">
+                                <input type="email" name="email_address" placeholder="Add Your email address"
+                                    class="email-field" required>
+
+                                <button type="submit" class="footer-form-btn">
+                                    <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                                </button>
+                            </form> -->
+
+                            <div class="wrapper">
+                                <a href="#" class="footer-link">Term & Condition</a>
+                                <a href="#" class="footer-link">Legal Notices</a>
+                                <a href="#" class="footer-link">Privacy</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="footer-bottom">
+                        <p class="copyright">&copy; 2025 All Rights Reserved by <a href="#"
+                                class="copyright-link">Gadgeto</a> .</p>
+                    </div>
+
+                </div>
+            </footer>
+
+            <!-- back to top -->
+            <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn><ion-icon name="arrow-up"
+                    aria-hidden="true"></ion-icon></a>
+
+        </article>
+    </main>
+
+
+
+
+    <!-- Javascript -->
+    <script src="./assets/js/script.js"></script>
+    <!--Ion Icon Link  -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
+
 </html>
