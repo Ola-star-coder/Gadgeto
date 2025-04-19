@@ -1134,6 +1134,10 @@ a.card-meta-text:is(:hover, :focus) {
 }
 
 
+/*-----------------------------------*\
+  #PRODUCT DETAILS
+\*-----------------------------------*/
+
 .product-details-section {
   padding: 100px 0px 5px 5px;
 }
@@ -1246,10 +1250,7 @@ a.card-meta-text:is(:hover, :focus) {
 
 .butn {
   display: inline-block;
-  /* justify-content: center;
-  align-items: center;
-  text-align: center; */
-  margin: 20px 0px;
+  margin: 10px 0px;
   padding: 10px 0px;
   background-color: var(--tan-crayola);
   color: var(--primary-color);
@@ -1260,6 +1261,7 @@ a.card-meta-text:is(:hover, :focus) {
   transition: background-color 0.3s ease;
   width: 60%;
 }
+
 
 .butn:hover {
   background-color: var(--red-orange-color-wheel);
@@ -1344,4 +1346,107 @@ a.card-meta-text:is(:hover, :focus) {
     border-radius: 5px;
     transition: border 0.3s;
   }
+
+  .butn {
+    margin: 10px 0px;
+    padding: 10px 0px;
+    background-color: var(--tan-crayola);
+    color: var(--primary-color);
+    font-size: 16px;
+    font-weight: var(--fw-500);
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    width: 50%;
+  }
+
+  .butn-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0px;
+    gap: 20px;
+  }
+}
+
+
+
+/*-----------------------------------*\
+  #CHECKOUT
+\*-----------------------------------*/
+
+.checkout-section {
+  padding: 60px 0px 5px 5px;
+}
+
+.checkout-container {
+  width: 370px;
+  margin: 50px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+}
+
+.summary {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.checkout-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--tan-crayola);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.checkout-container button:hover {
+  transition: 0.3s ease;
+  background: var(--red-orange-color-wheel);
+}
+
+#successMsg {
+  color: green;
+  text-align: center;
+  margin-top: 15px;
+}
+
+#errorMsg {
+  color: red;
+  text-align: center;
+  margin-top: 15px;
 }

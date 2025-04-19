@@ -21,6 +21,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mr+De+Haviland&family=Roboto:wght@400;500;700&display=swap"
         rel="stylesheet">
+
+    <!-- Pre-load Images -->
+    <link rel="preload" as="image" href="./assets/images/hero-product-1.jpg">
+    <link rel="preload" as="image" href="./assets/images/hero-product-2.jpg">
+    <link rel="preload" as="image" href="./assets/images/hero-product-3.jpg">
+    <link rel="preload" as="image" href="./assets/images/hero-product-4.jpg">
+    <link rel="preload" as="image" href="./assets/images/hero-product-5.jpg">
 </head>
 
 <body id="top">
@@ -191,85 +198,55 @@
 
     <main>
         <article>
-            <!-- Product Details Section -->
- <section class="product-details-section" id="product-details">
-    <div class="product-container">
-
-        <div class="product-details-wrapper">
-        <!-- Product Image -->
-        <div class="image-gallery">
-
-        <img src="./assets/images/dell-1.jpg" alt="Product Image" class="main-image" id="main-image" onclick="openLightbox(this.src)">
-
-        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-            <img id="lightbox-img" src="" alt="Zoomed image" draggable="false">
-        </div>
-                
-        <div class="thumbnails">
-        <img src="./assets/images/dell-2.avif" alt="Product Image" class="thumb">
-        <img src="./assets/images/dell-3.avif" alt="Product Image" class="thumb">
-        <img src="./assets/images/dell-4.avif" alt="Product Image" class="thumb">
-        <img src="./assets/images/dell-5.avif" alt="Product Image" class="thumb">
-        <img src="./assets/images/dell-6.avif" alt="Product Image" class="thumb">
-        <img src="./assets/images/dell-7.avif" alt="Product Image" class="thumb">
-        <img src="./assets/images/dell-8.avif" alt="Product Image" class="thumb">
-        <img src="./assets/images/dell-9.avif" alt="Product Image" class="thumb">
-        <img src="./assets/images/dell-10.avif" alt="Product Image" class="thumb">
-        </div>
-        </div>
-         
-        <!-- Product Content -->
-        <div class="product-details-content">
-        <h2 class="product-detail-title">Dell Precision 5540 Workstation</h2>
-        <h3>Power Meets Portability for Nigerian Professionals</h3>
-        <p class="product-description">Step up your productivity game with the Dell Precision 5540, a high-performance workstation built for engineers,
-        creatives, architects, developers, and business professionals in Nigeria who demand speed, power, and reliability.</p>
-
-        <div class="product-features">
-         <h2 class="product-feature-head">Key Features:</h2> 
-
-        <p class="product-feature-text">9th Gen Intel Core i7/i9 or Xeon Processor – Tackle heavy tasks like AutoCAD, video
-        editing, 3D modeling, and software
-        development with ease.</p>
-        <p class="product-feature-text">NVIDIA Quadro Graphics – Perfect for rendering, CAD design, and content creation.</p>
-
-        <p class="product-feature-text">15.6” 4K UHD or Full HD Display – Enjoy vibrant, razor-sharp visuals whether you’re editing videos, working on
-        blueprints, or watching Nollywood in stunning quality.</p>
-
-        <p class="product-feature-text">Sleek & Lightweight – At just 1.78kg, it's ideal both heavy graphics work and remote jobs</p>
-
-     <p class="product-feature-text">Long Battery Life & Fast Charging – Stay powered through long meetings and client presentations.</p>
-
-     <p class="product-feature-text">Premium Build Quality – Crafted with durable materials to withstand the hustle and bustle of daily Nigerian life.</p>
-
-        </div>
-
-        <div class="perfect-feature">
-        <h2 class="perfect-feature-head">Why It’s Perfect for you:</h2>
-
-        <p class="perfect-feature-text">The Dell Precision 5540 delivers desktop-grade performance in a sleek laptop package. Whether you're building apps,
-        editing content, or managing a business, it keeps up with your ambition.</p>
-        </div>
-
-        <div class="butn-container">
-        <button type="submit" class="butn"><a
-        href="checkout.html">Buy
-        Now</a></button>
-        
-        <button type="submit" class="butn"><a href="https://api.whatsapp.com/send?phone=9155262332&text=Hi,%20I'm%20interested%20in%20buying%20Dell%20precision%C2%A05550.">Buy On Whatsapp</a></button>
-
-        </div>
-
-        </div>
-
-        </div>
-
-    </div>
-</section>
-
-
-
-
+          
+            <!--Checkout section  -->
+            <section class="checkout-section">
+            <div class="checkout-container">
+                <h2>Checkout</h2>
+                <form id="checkoutForm">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" id="name" required />
+                    </div>
+            
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="email" required />
+                    </div>
+            
+                    <div class="form-group">
+                        <label>Address</label>
+                        <input type="text" id="address" required />
+                    </div>
+            
+                    <div class="form-group">
+                        <label>Card Number</label>
+                        <input type="text" id="cardNumber" maxlength="16" required />
+                    </div>
+            
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Expiry</label>
+                            <input type="text" id="expiry" placeholder="MM/YY" required />
+                        </div>
+                        <div class="form-group">
+                            <label>CVV</label>
+                            <input type="text" id="cvv" maxlength="3" required />
+                        </div>
+                    </div>
+            
+                    <div class="summary">
+                        <p>Total: <strong>$1899</strong></p>
+                    </div>
+            
+                    <button type="submit">Pay Now</button>
+                    <p id="successMsg"></p>
+                    <p id="errorMsg"></p>
+                </form>
+            </div>
+            </section>
+       
+      
             <!-- Footer -->
             <footer class="footer">
                 <div class="container">

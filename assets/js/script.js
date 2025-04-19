@@ -103,6 +103,56 @@ lastClickedFilterBtn = this;
 filterBox.setAttribute('data-filter', this.dataset.filterBtn)
 }
 
+// Dom for checkout form
+// Checkout form validation
+document.addEventListener("DOMContentLoaded", function () {
+  const checkoutForm = document.getElementById("checkoutForm");
+
+  if (!checkoutForm) return; // If this form doesn't exist, do nothing
+
+  checkoutForm.addEventListener("submit", function (e) {
+    e.preventDefault(); // Stop default form behavior/ refreshing the page
+
+    // Get form values
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const address = document.getElementById("address").value.trim();
+    const cardNumber = document.getElementById("cardNumber").value.trim();
+    const expiry = document.getElementById("expiry").value.trim();
+    const cvv = document.getElementById("cvv").value.trim();
+
+    // Validate form values
+    // Simple validation checks (you can expand these as needed)
+    const errorMsg = document.getElementById("errorMsg");
+    const successMsg = document.getElementById("successMsg");
+
+    errorMsg.textContent = "";
+    successMsg.textContent = "";
+
+
+    if (!name || !email || !address) {
+      errorMsg.textContent = "❌ Please fill out all fields correctly.";
+      return;
+    }
+    
+    if (
+      cardNumber.length !== 16 || !/^\d+$/.test(cardNumber) ||
+      !/^\d{2}\/\d{2}$/.test(expiry) ||
+      cvv.length < 3 || cvv.length > 4 || !/^\d+$/.test(cvv)
+    ) {
+      errorMsg.textContent = "❌ Invalid card details. Please check and try again.";
+      return;
+    }
+    
+    // If all validations pass, show success message
+    successMsg.textContent = "✅ Payment successful! Thank you for your order.";
+    checkoutForm.reset();
+  });
+});
+
+
+
+
 
 // event on element
 addEventonElem(navTogglers, 'click', toggleNavbar);
