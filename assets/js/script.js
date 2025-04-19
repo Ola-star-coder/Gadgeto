@@ -105,51 +105,106 @@ filterBox.setAttribute('data-filter', this.dataset.filterBtn)
 
 // Dom for checkout form
 // Checkout form validation
+// document.addEventListener("DOMContentLoaded", function () {
+//   const checkoutForm = document.getElementById("checkoutForm");
+
+//   if (!checkoutForm) return; // If this form doesn't exist, do nothing
+
+//   checkoutForm.addEventListener("submit", function (e) {
+//     e.preventDefault(); // Stop default form behavior/ refreshing the page
+
+//     // Get form values
+//     const name = document.getElementById("name").value.trim();
+//     const email = document.getElementById("email").value.trim();
+//     const address = document.getElementById("address").value.trim();
+//     const phone = document.getElementById("phone").value.trim();
+
+//     // Validate form values
+//     // Simple validation checks (you can expand these as needed)
+//     const errorMsg = document.getElementById("errorMsg");
+//     const successMsg = document.getElementById("successMsg");
+
+//     errorMsg.textContent = "";
+//     successMsg.textContent = "";
+
+
+//     if (!name || !email || !address) {
+//       errorMsg.textContent = "❌ Please fill out all fields correctly.";
+//       return;
+//     }
+    
+//     if (
+//       phone.length !== 11 || !/^\d+$/.test(phone) ||
+//       !/^\d{2}\/\d{2}$/.test(expiry) ||
+//       cvv.length < 3 || cvv.length > 4 || !/^\d+$/.test(cvv)
+//     ) {
+//       errorMsg.textContent = "❌ Invalid card details. Please check and try again.";
+//       return;
+//     }
+    
+//     // If all validations pass, show success message
+//     successMsg.textContent = "✅ Payment successful! Thank you for your order.";
+//     checkoutForm.reset();
+//   });
+// });
+
+
 document.addEventListener("DOMContentLoaded", function () {
-  const checkoutForm = document.getElementById("checkoutForm");
+  const form = document.getElementById("checkoutForm");
+  const inputs = form.querySelectorAll("input");
+  const submitBtn = form.querySelector("button[type='submit']");
 
-  if (!checkoutForm) return; // If this form doesn't exist, do nothing
+  const validators = {
+    name: value => value.trim().length >= 2,
+    email: value => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
+    address: value => value.trim().length >= 5,
+    phone: value => /^[\d\s+()-]{7,}$/.test(value)
+  };
 
-  checkoutForm.addEventListener("submit", function (e) {
-    e.preventDefault(); // Stop default form behavior/ refreshing the page
+  const validateInput = (input) => {
+    const id = input.id;
+    const value = input.value;
+    const isValid = validators[id] ? validators[id](value) : true;
+    const errorEl = input.nextElementSibling;
 
-    // Get form values
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const address = document.getElementById("address").value.trim();
-    const cardNumber = document.getElementById("cardNumber").value.trim();
-    const expiry = document.getElementById("expiry").value.trim();
-    const cvv = document.getElementById("cvv").value.trim();
-
-    // Validate form values
-    // Simple validation checks (you can expand these as needed)
-    const errorMsg = document.getElementById("errorMsg");
-    const successMsg = document.getElementById("successMsg");
-
-    errorMsg.textContent = "";
-    successMsg.textContent = "";
-
-
-    if (!name || !email || !address) {
-      errorMsg.textContent = "❌ Please fill out all fields correctly.";
-      return;
+    if (isValid) {
+      input.classList.add("valid");
+      input.classList.remove("invalid");
+      errorEl.textContent = "";
+    } else {
+      input.classList.remove("valid");
+      input.classList.add("invalid");
+      errorEl.textContent = `Please enter a valid ${id}.`;
     }
-    
-    if (
-      cardNumber.length !== 16 || !/^\d+$/.test(cardNumber) ||
-      !/^\d{2}\/\d{2}$/.test(expiry) ||
-      cvv.length < 3 || cvv.length > 4 || !/^\d+$/.test(cvv)
-    ) {
-      errorMsg.textContent = "❌ Invalid card details. Please check and try again.";
-      return;
-    }
-    
-    // If all validations pass, show success message
-    successMsg.textContent = "✅ Payment successful! Thank you for your order.";
-    checkoutForm.reset();
+
+    checkFormValidity();
+  };
+
+  const checkFormValidity = () => {
+    let isFormValid = true;
+    inputs.forEach(input => {
+      const id = input.id;
+      if (validators[id] && !validators[id](input.value)) {
+        isFormValid = false;
+      }
+    });
+    submitBtn.disabled = !isFormValid;
+  };
+
+  // Real-time validation
+  inputs.forEach(input => {
+    input.addEventListener("input", () => validateInput(input));
+  });
+
+  // Submit event
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    alert("✅ Order confirmed. Thank you!");
+    form.reset();
+    inputs.forEach(input => input.classList.remove("valid"));
+    submitBtn.disabled = true;
   });
 });
-
 
 
 

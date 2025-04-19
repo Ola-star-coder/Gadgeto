@@ -1376,10 +1376,10 @@ a.card-meta-text:is(:hover, :focus) {
 \*-----------------------------------*/
 
 .checkout-section {
-  padding: 60px 0px 5px 5px;
+  padding: 50px 0px 5px 5px;
 }
 
-.checkout-container {
+.checkout-forms {
   width: 370px;
   margin: 50px auto;
   background: white;
@@ -1388,7 +1388,7 @@ a.card-meta-text:is(:hover, :focus) {
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
 }
 
-.checkout-container h2 {
+.checkout-forms h2 {
   text-align: center;
   margin-bottom: 20px;
 }
@@ -1403,26 +1403,31 @@ a.card-meta-text:is(:hover, :focus) {
   margin-bottom: 5px;
 }
 
-input[type="text"],
-input[type="email"] {
-  width: 90%;
+.checkout-form input {
+  width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   outline: none;
 }
 
-.form-row {
-  display: flex;
-  gap: 10px;
+
+.form-group input.valid {
+  border-color: green;
 }
 
-.summary {
-  margin: 20px 0;
-  text-align: center;
+.form-group input.invalid {
+  border-color: red;
 }
 
-.checkout-container button {
+.form-group small.error-message {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 0.3rem;
+  display: block;
+}
+
+.checkout-form button {
   width: 100%;
   padding: 12px;
   background-color: var(--tan-crayola);
@@ -1434,19 +1439,7 @@ input[type="email"] {
   transition: background-color 0.3s ease;
 }
 
-.checkout-container button:hover {
-  transition: 0.3s ease;
-  background: var(--red-orange-color-wheel);
-}
-
-#successMsg {
-  color: green;
-  text-align: center;
-  margin-top: 15px;
-}
-
-#errorMsg {
-  color: red;
-  text-align: center;
-  margin-top: 15px;
+.checkout-form button:disabled {
+  background: #aaa;
+  cursor: not-allowed;
 }
