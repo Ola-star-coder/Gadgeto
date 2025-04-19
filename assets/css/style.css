@@ -1244,6 +1244,30 @@ a.card-meta-text:is(:hover, :focus) {
   padding: 10px 0px;
 }
 
+.butn {
+  display: inline-block;
+  /* justify-content: center;
+  align-items: center;
+  text-align: center; */
+  margin: 20px 0px;
+  padding: 10px 0px;
+  background-color: var(--tan-crayola);
+  color: var(--primary-color);
+  font-size: 16px;
+  font-weight: var(--fw-500);
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  width: 60%;
+}
+
+.butn:hover {
+  background-color: var(--red-orange-color-wheel);
+  color: var(--primary-color);
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
 @media screen and (min-width:575px) {
   .thumbnails img {
     width: 90px;
